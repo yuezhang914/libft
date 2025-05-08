@@ -6,16 +6,16 @@
 /*   By: yzhang2 <yzhang2@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/29 01:26:52 by yzhang2           #+#    #+#             */
-/*   Updated: 2025/04/30 03:04:07 by yzhang2          ###   ########.fr       */
+/*   Updated: 2025/05/08 19:26:34 by yzhang2          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_count_array(char const *s, char c)
+static size_t	ft_count_array(char const *s, char c)
 {
-	int	i;
-	int	count;
+	size_t	i;
+	size_t	count;
 
 	i = 0;
 	count = 0;
@@ -41,7 +41,7 @@ static size_t	ft_len(const char *s, char c)
 	return (i);
 }
 
-static int	ft_add_word(char **array, int j, const char *s, char c)
+static int	ft_add_word(char **array, size_t j, const char *s, char c)
 {
 	array[j] = ft_substr(s, 0, ft_len(s, c));
 	if (!array[j])
@@ -49,19 +49,22 @@ static int	ft_add_word(char **array, int j, const char *s, char c)
 	return (1);
 }
 
-static void	ft_free_array(char **array, int j)
+static void	ft_free_array(char **array, size_t j)
 {
-	while (--j >= 0)
+	while (j > 0)
+	{
+		j--;
 		free(array[j]);
+	}
 	free(array);
 }
 
 char	**ft_split(char const *s, char c)
 {
 	char	**array;
-	int		i;
-	int		j;
-	int		count;
+	size_t	i;
+	size_t	j;
+	size_t	count;
 
 	i = 0;
 	j = 0;
