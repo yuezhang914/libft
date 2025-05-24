@@ -6,7 +6,7 @@
 /*   By: yzhang2 <yzhang2@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/29 00:49:31 by yzhang2           #+#    #+#             */
-/*   Updated: 2025/04/29 01:21:24 by yzhang2          ###   ########.fr       */
+/*   Updated: 2025/05/24 16:42:06 by yzhang2          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,14 +23,12 @@ char	*ft_strtrim(char const *s1, char const *set)
 	if (!set)
 		return (ft_strdup(s1));
 	i = 0;
-	while (ft_strchr(set, s1[i]))
-	{
+	while (s1[i] && ft_strchr(set, s1[i]))
 		i++;
-	}
-	if (i == ft_strlen(s1))
-		return (ft_strdup(s1));
+	if (!s1[i])
+		return (ft_strdup(""));
 	j = ft_strlen(s1) - 1;
-	while (ft_strchr(set, s1[j]))
+	while (j > i && ft_strchr(set, s1[j]))
 		j--;
 	str = malloc(j - i + 2);
 	if (!str)

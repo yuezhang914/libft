@@ -6,7 +6,7 @@
 /*   By: yzhang2 <yzhang2@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/30 02:55:04 by yzhang2           #+#    #+#             */
-/*   Updated: 2025/05/01 17:16:16 by yzhang2          ###   ########.fr       */
+/*   Updated: 2025/05/24 16:36:50 by yzhang2          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,20 @@
 
 void	ft_putnbr_fd(int n, int fd)
 {
-	char	*str;
+	char	c;
 
-	str = ft_itoa(n);
-	if (str)
+	if (n == -2147483648)
 	{
-		write(fd, str, ft_strlen(str));
-		free(str);
+		write(fd, "-2147483648", 11);
+		return ;
 	}
+	if (n < 0)
+	{
+		write(fd, "-", 1);
+		n = -n;
+	}
+	if (n > 9)
+		ft_putnbr_fd(n / 10, fd);
+	c = '0' + (n % 10);
+	write(fd, &c, 1);
 }
