@@ -12,13 +12,21 @@ This repository contains my implementation of **libft**, a foundational C librar
 
 📄 Based on the official [libft subject](./Libft.pdf)
 
+
 ## 🔧 Build Instructions
 
-make        # builds libft.a using mandatory files
-make bonus  # includes *_bonus.c functions
-make clean  # removes object files
+To build the library:
+
+make # builds libft.a using mandatory files
+
+make bonus # includes *_bonus.c functions
+
+make clean # removes object files
+
 make fclean # removes object files and libft.a
-make re     # fclean + make
+
+make re # fclean + make
+
 
 ## ✅ Implemented Functions
 
