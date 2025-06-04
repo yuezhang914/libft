@@ -4,7 +4,7 @@ This repository contains my implementation of **libft**, a foundational C librar
 
 ## 🧩 About the Project
 
-**Libft** is your very first custom library in C. It reimplements essential standard C library functions and includes additional utility functions to help you in future C projects.
+ It reimplements essential standard C library functions and includes additional utility functions to use in future C projects. I added an edition that check pointers first to prevent any safety problems when used in other project.
 
 - ✅ 100% written in C
 - ✅ Norm-compliant
