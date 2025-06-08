@@ -46,9 +46,9 @@ ft_lstnew, ft_lstadd_back, ft_lstsize, ft_lstlast, ft_lstdelone, ft_lstclear, ft
 
 ```bash
 .
-├── libft/         # The required functions for the official project (ft_*.c/.h)
-├── test-libft/    # Contains main() test versions of each function for easier debugging
-├── libft-safe/    # Check pointers first to prevent any safety problems when used in other project
+├── libft-origin/         # The required functions for the official project (ft_*.c/.h)
+├── test/    # Contains main() test versions of each function for easier debugging
+├── libft/    # Check pointers first to prevent any safety problems when used in other project
 ├── Libft.pdf      # The official 42 project subject
 ├── Makefile       # Builds libft.a and supports bonus rules
 └── README.md      # You are here
