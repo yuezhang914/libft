@@ -6,7 +6,7 @@
 /*   By: yzhang2 <yzhang2@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/29 01:26:52 by yzhang2           #+#    #+#             */
-/*   Updated: 2025/05/08 19:26:34 by yzhang2          ###   ########.fr       */
+/*   Updated: 2025/06/04 15:35:40 by yzhang2          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,8 @@ char	**ft_split(char const *s, char c)
 
 	i = 0;
 	j = 0;
+	if (!s)
+		return (NULL);
 	count = ft_count_array(s, c);
 	array = malloc(sizeof(char *) * (count + 1));
 	if (!array)

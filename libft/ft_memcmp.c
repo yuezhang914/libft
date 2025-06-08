@@ -6,7 +6,7 @@
 /*   By: yzhang2 <yzhang2@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/28 15:24:17 by yzhang2           #+#    #+#             */
-/*   Updated: 2025/04/28 15:30:55 by yzhang2          ###   ########.fr       */
+/*   Updated: 2025/06/04 13:54:26 by yzhang2          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	unsigned char	*str2;
 
 	i = 0;
+	if (!s1 || !s2)
+		return (0);
 	str1 = (unsigned char *)s1;
 	str2 = (unsigned char *)s2;
 	while (i < n && str1[i] == str2[i])

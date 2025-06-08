@@ -6,7 +6,7 @@
 /*   By: yzhang2 <yzhang2@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/30 02:44:42 by yzhang2           #+#    #+#             */
-/*   Updated: 2025/04/30 02:49:55 by yzhang2          ###   ########.fr       */
+/*   Updated: 2025/06/04 15:34:37 by yzhang2          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,8 @@ void	ft_putstr_fd(char *s, int fd)
 {
 	int	len;
 
-	if (s)
-	{
-		len = ft_strlen(s);
-		write(fd, s, len);
-	}
+	if (!s)
+		return ;
+	len = ft_strlen(s);
+	write(fd, s, len);
 }
