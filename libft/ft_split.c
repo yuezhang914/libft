@@ -6,7 +6,7 @@
 /*   By: yzhang2 <yzhang2@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/29 01:26:52 by yzhang2           #+#    #+#             */
-/*   Updated: 2025/06/04 15:35:40 by yzhang2          ###   ########.fr       */
+/*   Updated: 2025/06/10 03:11:47 by yzhang2          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,14 +78,10 @@ char	**ft_split(char const *s, char c)
 	{
 		while (s[i] && s[i] == c)
 			i++;
-		if (s[i])
-		{
-			if (!ft_add_word(array, j, s + i, c))
-				return (ft_free_array(array, j), NULL);
-			i += ft_len(&s[i], c);
-			j++;
-		}
+		if (s[i] && !ft_add_word(array, j, s + i, c))
+			return (ft_free_array(array, j), NULL);
+		i += ft_len(&s[i], c);
+		j++;
 	}
-	array[j] = NULL;
-	return (array);
+	return (array[j] = NULL, array);
 }
