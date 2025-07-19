@@ -6,13 +6,14 @@
 /*   By: yzhang2 <yzhang2@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/27 16:50:12 by yzhang2           #+#    #+#             */
-/*   Updated: 2025/07/19 01:37:04 by yzhang2          ###   ########.fr       */
+/*   Updated: 2025/07/19 02:04:55 by yzhang2          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
+# include "ft_printf/ft_printf.h"
 # include "get_next_line/get_next_line.h"
 # include <limits.h>
 # include <stdint.h>
@@ -70,6 +71,5 @@ void				ft_lstclear(t_list **lst, void (*del)(void *));
 void				ft_lstiter(t_list *lst, void (*f)(void *));
 t_list				*ft_lstmap(t_list *lst, void *(*f)(void *),
 						void (*del)(void *));
-char				*get_next_line(int fd);
 
 #endif
