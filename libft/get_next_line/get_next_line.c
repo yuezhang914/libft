@@ -6,7 +6,7 @@
 /*   By: yzhang2 <yzhang2@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/28 16:21:54 by yzhang2           #+#    #+#             */
-/*   Updated: 2025/06/03 15:45:32 by yzhang2          ###   ########.fr       */
+/*   Updated: 2025/08/12 15:39:55 by yzhang2          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ static char	*join_free(char *s1, char *s2)
 	char	*tmp;
 
 	tmp = s1;
-	joined = ft_strjoin(tmp, s2);
+	joined = gnl_strjoin(tmp, s2);
 	free(tmp);
 	return (joined);
 }
@@ -29,14 +29,14 @@ char	*read_save(int fd, char *backup)
 	char	*buf;
 
 	if (!backup)
-		backup = ft_strdup("");
+		backup = gnl_strdup("");
 	if (!backup)
 		return (NULL);
 	buf = malloc(BUFFER_SIZE + 1);
 	if (!buf)
 		return (free(backup), NULL);
 	count = 1;
-	while (backup && !ft_strchr(backup, '\n') && count > 0)
+	while (backup && !gnl_strchr(backup, '\n') && count > 0)
 	{
 		count = read(fd, buf, BUFFER_SIZE);
 		if (count < 0)
@@ -63,7 +63,7 @@ char	*get_the_line(char *backup)
 		i++;
 	if (backup[i] == '\n')
 		i++;
-	line = ft_substr(backup, 0, i);
+	line = gnl_substr(backup, 0, i);
 	return (line);
 }
 
@@ -82,7 +82,7 @@ char	*refresh_backup(char *backup)
 		free(backup);
 		return (NULL);
 	}
-	fresh = ft_strdup(backup + i + 1);
+	fresh = gnl_strdup(backup + i + 1);
 	free(backup);
 	return (fresh);
 }
